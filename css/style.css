@@ -1,0 +1,77 @@
+body {
+    background-color: #e2d6d6ea;
+}
+
+header {
+    z-index: 100;
+}
+
+.description {
+    height: 25px;
+    overflow: hidden;
+    transition: height .3s ease-in .3s;
+    color: rgb(255, 255, 255);
+}
+
+
+.carrito {
+    min-height: 80vh;
+    max-width: 1000px;
+    margin: auto;
+    width: 100%;
+}
+
+.table__productos {
+    display: flex;
+}
+
+.table__productos {
+    width: 20rem;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-left: 200px;
+}
+
+img {
+    width: 200px;
+    height: 300px;
+    margin: 0px;
+}
+.table__cantidad > input {
+    width: 40px;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    font-weight: 70px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.productos {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(182, 55, 33);
+    display: flex;
+    justify-content: space-around
+}
+
+.precio {
+    color: rgb(16, 17, 17);
+}
+
+.pprecio {
+    color: rgb(12, 12, 11);
+}
+
+.totalItems {
+    color: rgb(27, 25, 25);
+}
+
+.fotoCarrito {
+    width: 40px;
+    height: 40px;
+    margin-left: 8px;
+}
+
+.cards {
+    background-color: rgb(167, 129, 143);
+}
