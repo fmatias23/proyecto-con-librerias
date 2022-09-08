@@ -27,6 +27,15 @@ function addCarrito(e) {
 
 function addItemCarrito(nuevoItem) {
 
+    const alert = document.querySelector('.alert')
+
+    setTimeout(function(){
+        alert.classList.add('hide')
+    }, 2000)
+    alert.classList.remove('hide')
+
+
+
     const inputElemento = tbody.getElementsByClassName("input__elment")
     for (let i = 0; i < carrito.length; i++) {
         if (carrito[i].title.trim() === nuevoItem.title.trim()) {
@@ -41,17 +50,6 @@ function addItemCarrito(nuevoItem) {
 
     
     carrito.push(nuevoItem)
-
-
-// INCORPORANDO LIBRERIAS *          (acomodar segun el producto de id) 
-
-    Toastify({
-
-        text: "Producto agregado",
-        
-        duration: 2000
-        
-        }).showToast()
     mostrarCarrito();
 
     
@@ -105,9 +103,20 @@ function removeCarrito(e) {
             carrito.splice(i, 1)
         }
     }
+
+    const alert = document.querySelector('.borrar')
+
+    setTimeout(function(){
+        alert.classList.add('borrar')
+    }, 2000)
+    alert.classList.remove('borrar')
+
     tr.remove()
-    totalCarrito()
+    mostrarCarrito();
+
 }
+
+
 
 function sumarCantidad(e) {
     const suma = e.target
@@ -135,5 +144,32 @@ window.onload = function () {
     if (lstorage) {
         carrito = lstorage;
         mostrarCarrito()
+    }
+}
+
+
+
+// ------------ FETCH -----------------------
+
+const $form = document.querySelector('#form')
+
+$form.addEventListener('submit', handleSubmit)
+
+ async function handleSubmit(event){
+    event.preventDefault()
+    const form = new FormData(this)
+    const response = await fetch(this.action, {
+        method: this.method,
+        body: form,
+        headers: {
+            'Accept': 'application/json'
+        }
+        
+    })
+
+    if(response.ok){
+        this.reset()
+        alert("gracias, pronto nos comunicaremos con usted")
+        
     }
 }

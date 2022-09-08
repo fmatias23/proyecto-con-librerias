@@ -2,9 +2,10 @@ body {
     background-color: #e2d6d6ea;
 }
 
-header {
+header, .alert{
     z-index: 100;
 }
+
 
 .description {
     height: 25px;
@@ -67,11 +68,35 @@ img {
 }
 
 .fotoCarrito {
-    width: 40px;
-    height: 40px;
-    margin-left: 8px;
+    width: 35px;
+    height: 35px;
+    margin-left: 15px;
 }
 
 .cards {
     background-color: rgb(167, 129, 143);
 }
+
+.hide, .borrar {
+    display: none;
+
+}
+
+.conteinerFrorm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 475px;
+}
+
+.text-form{
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+
+
+
+
+
+
